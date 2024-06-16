@@ -12,8 +12,10 @@ logo: "assets/me.jpeg"
 show_downloads: false
 
 # Social settings
-email: "tomasestrellaramiro@gmail.com"
-linkedin_username: "https://www.linkedin.com/in/ramiropernetti/"
+ <div class="social-links">
+      <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
+      <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
+</div>
 
 # Build settings
 markdown: kramdown
