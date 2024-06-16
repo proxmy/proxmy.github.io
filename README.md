@@ -47,8 +47,6 @@
 <div style="display: flex; align-items: flex-start;">
   <!-- Barra lateral izquierda -->
   <div style="flex: 1; margin-right: 20px; max-width: 300px; text-align: center;">
-    <h2>Ramiro Estrella Pernetti</h2>
-    <p><strong>IT Systems Technician</strong></p>
     <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%; margin-bottom: 20px;">
 
     <h3>Contacto</h3>
