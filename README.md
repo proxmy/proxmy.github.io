@@ -1,3 +1,6 @@
+# Ramiro Estrella Pernetti
+**IT Systems Technician**
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -14,7 +17,6 @@
     } else {
       setTheme('dark');
     }
-    updateButtonIcon();
   }
 
   function updateButtonIcon() {
@@ -27,14 +29,14 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  (function () {
     if (localStorage.getItem('theme') === 'dark') {
       setTheme('dark');
     } else {
       setTheme('light');
     }
     updateButtonIcon();
-  });
+  })();
 </script>
 
 <button id="themeToggleButton" onclick="toggleTheme()" style="margin-bottom: 20px; padding: 5px 10px; font-size: 16px;">
@@ -46,9 +48,6 @@
   <div style="flex: 1; margin-right: 20px; max-width: 300px; text-align: center;">
     <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%; margin-bottom: 20px;">
     
-    <h2>Ramiro Estrella Pernetti</h2>
-    <p><strong>IT Systems Technician</strong></p>
-
     <h3>Contacto</h3>
     <div class="social-links" style="margin-bottom: 20px;">
       <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
@@ -97,5 +96,3 @@
     </ul>
   </div>
 </div>
-
-
