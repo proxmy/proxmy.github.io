@@ -54,6 +54,12 @@
 - Virtualización de equipos con VMWare
 - Gestión de ticketing mediante software propietario
 
+## Contacto
+<div class="social-links">
+  <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
+  <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
+</div>
+
 #### Certificaciones
 - [Microsoft Certified: Azure Fundamentals](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)
 - [Microsoft 365 Certified: Fundamentals](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)
