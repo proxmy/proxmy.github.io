@@ -8,7 +8,7 @@ url: "https://proxmyp.github.io" # the base hostname & protocol for your site
 theme: jekyll-theme-minimal
 
 # Sidebar settings
-logo: "assets/me.jpeg"
+logo: ""
 show_downloads: false
 
 # Social settings
