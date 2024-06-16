@@ -90,9 +90,9 @@
 
     <h3>Certificaciones</h3>
     <ul>
-      <li><a href="[enlace](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)">Microsoft Certified: Azure Fundamentals</a></li>
-      <li><a href="[enlace](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)">Microsoft 365 Certified: Fundamentals</a></li>
-      <li><a href="[enlace](https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile)">ITIL 4 ® Foundation</a></li>
+      <li><a href="[(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)]">Microsoft Certified: Azure Fundamentals</a></li>
+      <li><a href="[(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)]">Microsoft 365 Certified: Fundamentals</a></li>
+      <li><a href="[(https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile)]">ITIL 4 ® Foundation</a></li>
     </ul>
   </div>
 </div>
