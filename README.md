@@ -33,7 +33,6 @@
   <div style="flex: 1; margin-right: 20px; max-width: 300px;">
     <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%;">
 
-    <h2>Ramiro Estrella Pernetti</h2>
     <p>IT Systems Technician</p>
 
     <h3>Contacto</h3>
