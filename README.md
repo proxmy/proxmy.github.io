@@ -28,7 +28,7 @@
 
 <button onclick="toggleTheme()">Toggle Theme</button>
 
-<div style="display: flex;">
+<div style="display: flex; align-items: flex-start;">
   <!-- Barra lateral izquierda -->
   <div style="flex: 1; margin-right: 20px; max-width: 300px;">
     <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%;">
