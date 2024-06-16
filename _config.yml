@@ -1,39 +1,6 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
-
-# Basic Site Settings
-locale                   : "en-US"
-title                    : "Ramiro Estrella Pernetti"
-title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "IT Systems Technician "
-url                      : https://proxmy.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "proxmy/proxmy.github.io"
-
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
-author:
-  # Biographic information
-  avatar           : ""
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "tomasestrellaramiro@gmail.com" 
-
-
-
-
-  # Social media
-  linkedin         : https://www.linkedin.com/in/ramiropernetti/
-
+title: Ramiro Estrella Pernetti
+logo: /assets/img/headshot_circle.png
+#description: text below image
+show_downloads: false
+theme: jekyll-theme-minimal
 
