@@ -1,6 +1,6 @@
 # Site settings
-title: "Ramiro Estrella Pernetti"
-description: "IT Systems Technician"
+title: ""
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://proxmyp.github.io" # the base hostname & protocol for your site
 
