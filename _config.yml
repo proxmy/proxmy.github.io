@@ -1,17 +1,22 @@
 # Site settings
-#title: "Ramiro Estrella Pernetti"
-#description: "IT Systems Technician"
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "https://proxmyp.github.io" # the base hostname & protocol for your site
+title: "Ramiro Estrella Pernetti"
+description: "IT Systems Technician"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://proxmyp.github.io" # the base hostname & protocol for your site
 
 # Theme settings
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 
 # Sidebar settings
-#logo: "assets/me.jpeg"
-#show_downloads: false
+logo: "assets/me.jpeg"
+show_downloads: false
+
+# Social settings
+email: "tomasestrellaramiro@gmail.com"
+linkedin_username: "https://www.linkedin.com/in/ramiropernetti/"
 
 # Build settings
-#markdown: kramdown
-#plugins:
-#  - jekyll-feed
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
