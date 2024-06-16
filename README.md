@@ -1,12 +1,3 @@
----
-layout: default
-title: "Ramiro Estrella Pernetti"
----
-
-<link rel="stylesheet" href="assets/css/styles.css">
-
-<button onclick="toggleTheme()">Toggle Theme</button>
-
 # IT Systems Technician
 
 ## Educacion
