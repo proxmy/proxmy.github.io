@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Ramiro Estrella Pernetti"
 title_separator          : "-"
 name                     : &name "Your Name"
-description              : &description "personal description"
+description              : &description "IT Systems Technician "
 url                      : https://proxmy.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "proxmy/proxmy.github.io"
@@ -28,12 +28,12 @@ author:
   location         : "Earth"
   employer         : "Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "tomasestrellaramiro@gmail.com" 
 
 
 
 
   # Social media
-  linkedin         : # Username
+  linkedin         : https://www.linkedin.com/in/ramiropernetti/
 
 
