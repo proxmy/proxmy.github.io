@@ -41,8 +41,6 @@
       <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
       <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
     </div>
-
-    <p>Short biography for the left-hand sidebar. You can include your current role, main interests, and other relevant details.</p>
   </div>
 
   <!-- Contenido principal -->
