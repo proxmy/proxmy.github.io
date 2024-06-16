@@ -30,7 +30,7 @@
 
 <div style="display: flex; align-items: flex-start;">
   <div style="flex: 1; margin-right: 20px;">
-    ![Foto de Perfil](assets/me.jpeg)
+    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; max-width: 300px;">
 
     ## IT Systems Technician
 
@@ -73,4 +73,5 @@
     - [ITIL 4 ® Foundation](enlace)
   </div>
 </div>
+
 
