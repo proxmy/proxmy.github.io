@@ -7,7 +7,7 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "es-ES"
+locale                   : "en-US"
 #title                    : ""
 title_separator          : "-"
 name                     : &name "Ramiro Estrella Pernetti"
