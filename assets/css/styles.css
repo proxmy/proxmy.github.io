@@ -21,4 +21,18 @@ body {
   margin-right: 10px;
   text-decoration: none;
   font-size: 24px;
+  color: var(--text-color);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
