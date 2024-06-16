@@ -17,6 +17,7 @@
     } else {
       setTheme('dark');
     }
+    updateButtonIcon();
   }
 
   function updateButtonIcon() {
@@ -29,14 +30,14 @@
     }
   }
 
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('theme') === 'dark') {
       setTheme('dark');
     } else {
       setTheme('light');
     }
     updateButtonIcon();
-  })();
+  });
 </script>
 
 <button id="themeToggleButton" onclick="toggleTheme()" style="margin-bottom: 20px; padding: 5px 10px; font-size: 16px;">
@@ -48,6 +49,9 @@
   <div style="flex: 1; margin-right: 20px; max-width: 300px; text-align: center;">
     <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%; margin-bottom: 20px;">
     
+    <h2>Ramiro Estrella Pernetti</h2>
+    <p><strong>IT Systems Technician</strong></p>
+
     <h3>Contacto</h3>
     <div class="social-links" style="margin-bottom: 20px;">
       <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
@@ -90,9 +94,20 @@
 
     <h3>Certificaciones</h3>
     <ul>
-      <li><a href="[(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)]">Microsoft Certified: Azure Fundamentals</a></li>
-      <li><a href="[(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)]">Microsoft 365 Certified: Fundamentals</a></li>
-      <li><a href="[(https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile)]">ITIL 4 ® Foundation</a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId">Microsoft 365 Certified: Fundamentals</a></li>
+      <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId">Microsoft Certified: Azure Fundamentals</a></li>
+      <li><a href="https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile">ITIL 4 ® Foundation</a></li>
+    </ul>
+
+    <h3>Blog</h3>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+          <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+          <p>{{ post.excerpt }}</p>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
