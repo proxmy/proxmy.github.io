@@ -1,3 +1,34 @@
+# Ramiro Estrella Pernetti
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script>
+  function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.setAttribute('data-theme', themeName);
+  }
+
+  function toggleTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
+
+  (function () {
+    if (localStorage.getItem('theme') === 'dark') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  })();
+</script>
+
+<button onclick="toggleTheme()">Toggle Theme</button>
+
+![Foto de Perfil](assets/me.jpeg)
 # IT Systems Technician
 
 ## Educacion
