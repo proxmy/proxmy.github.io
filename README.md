@@ -2,7 +2,7 @@
 
 ## Educacion
 - Grado en Ingeniería telemática Univerisdad Oberta de Cataluña (_2024 - Actual_)
-- Grado en Ingeniería telemática Univerisdad Politecnica Alcalá de Henares (_2021 -No finalizado_)
+- Grado en Ingeniería telemática Univerisdad Politecnica Alcalá de Henares (_2021 - 2023 No finalizado_)
 - Técnico superior (telecomunicaciones y sistemas informarticos) CIFP Ferrolterra (_2019 - 2021_)
 
 ### Experiencia laboral  
