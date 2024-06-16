@@ -1,5 +1,5 @@
 # Ramiro Estrella Pernetti
-<span class="title">**IT Systems Technician**</span>
+**IT Systems Technician**
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -8,6 +8,7 @@
   function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.setAttribute('data-theme', themeName);
+    updateButtonIcon();
   }
 
   function toggleTheme() {
@@ -16,7 +17,6 @@
     } else {
       setTheme('dark');
     }
-    updateButtonIcon();
   }
 
   function updateButtonIcon() {
@@ -39,7 +39,9 @@
   })();
 </script>
 
-<button id="themeToggleButton" onclick="toggleTheme()" style="margin-bottom: 20px; padding: 5px 10px; font-size: 16px;"></button>
+<button id="themeToggleButton" onclick="toggleTheme()" style="margin-bottom: 20px; padding: 5px 10px; font-size: 16px;">
+  <i class="fas fa-moon"></i>
+</button>
 
 <div style="display: flex; align-items: flex-start;">
   <!-- Barra lateral izquierda -->
@@ -94,4 +96,5 @@
     </ul>
   </div>
 </div>
+
 
