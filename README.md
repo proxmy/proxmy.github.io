@@ -24,6 +24,6 @@
 - Gestión de ticketing mediante software propietario
 
 #### Certificaciones
-- Microsoft Certified: Azure Fundamentals _(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)_
-- Microsoft 365 Certified: Fundamentals _(https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)_
-- ITIL 4 ® Foundation _(https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile)_
+- [Microsoft Certified: Azure Fundamentals](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId)
+- [Microsoft 365 Certified: Fundamentals](https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId)
+- [ITIL 4 ® Foundation](https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile)
