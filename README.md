@@ -26,17 +26,18 @@
   })();
 </script>
 
-<button onclick="toggleTheme()">Toggle Theme</button>
+<button onclick="toggleTheme()" style="margin-bottom: 20px;">Toggle Theme</button>
 
 <div style="display: flex; align-items: flex-start;">
   <!-- Barra lateral izquierda -->
-  <div style="flex: 1; margin-right: 20px; max-width: 300px;">
-    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%;">
+  <div style="flex: 1; margin-right: 20px; max-width: 300px; text-align: center;">
+    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%; margin-bottom: 20px;">
 
-    <p>IT Systems Technician</p>
+    <h2>Ramiro Estrella Pernetti</h2>
+    <p><em>IT Systems Technician</em></p>
 
     <h3>Contacto</h3>
-    <div class="social-links">
+    <div class="social-links" style="margin-bottom: 20px;">
       <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
       <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
     </div>
@@ -85,6 +86,3 @@
     </ul>
   </div>
 </div>
-
-
-
