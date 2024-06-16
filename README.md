@@ -28,50 +28,64 @@
 
 <button onclick="toggleTheme()">Toggle Theme</button>
 
-<div style="display: flex; align-items: flex-start;">
-  <div style="flex: 1; margin-right: 20px;">
-    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; max-width: 300px;">
+<div style="display: flex;">
+  <!-- Barra lateral izquierda -->
+  <div style="flex: 1; margin-right: 20px; max-width: 300px;">
+    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%;">
 
-    ## IT Systems Technician
+    <h2>Ramiro Estrella Pernetti</h2>
+    <p>IT Systems Technician</p>
 
-    ### Contacto
+    <h3>Contacto</h3>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/ramiropernetti/" class="fab fa-linkedin"></a>
       <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
     </div>
+
+    <p>Short biography for the left-hand sidebar. You can include your current role, main interests, and other relevant details.</p>
   </div>
 
+  <!-- Contenido principal -->
   <div style="flex: 2;">
-    ### Educación
-    - Grado en Ingeniería Telemática, Universidad Abierta de Cataluña (2024 - Actual)
-    - Grado en Ingeniería Telemática, Universidad Politécnica Alcalá de Henares (2023 - No finalizado)
-    - Técnico superior en telecomunicaciones y sistemas informáticos, CIFP Ferrolterra (2019 - 2021)
+    <h3>Educación</h3>
+    <ul>
+      <li>Grado en Ingeniería Telemática, Universidad Abierta de Cataluña (2024 - Actual)</li>
+      <li>Grado en Ingeniería Telemática, Universidad Politécnica Alcalá de Henares (2023 - No finalizado)</li>
+      <li>Técnico superior en telecomunicaciones y sistemas informáticos, CIFP Ferrolterra (2019 - 2021)</li>
+    </ul>
 
-    ### Experiencia Laboral
-    **Técnico en operaciones de sistemas informáticos en la DGSYFYP**  
-    _Septiembre 2023 - Actual_
-    - Monitorización de infraestructura
-    - Documentación detallada de procedimientos y configuraciones
-    - Maquetación de equipos
-    - Gestión de usuarios M365
-    - Participación en proyecto de migración de M365 junto con servidor Exchange
-    - Gestión de ticketing mediante software propietario
-    - Participación en proyectos de implantación del ENS CCN-CERT
+    <h3>Experiencia Laboral</h3>
+    <h4>Técnico en operaciones de sistemas informáticos en la DGSYFYP</h4>
+    <p><em>Septiembre 2023 - Actual</em></p>
+    <ul>
+      <li>Monitorización de infraestructura</li>
+      <li>Documentación detallada de procedimientos y configuraciones</li>
+      <li>Maquetación de equipos</li>
+      <li>Gestión de usuarios M365</li>
+      <li>Participación en proyecto de migración de M365 junto con servidor Exchange</li>
+      <li>Gestión de ticketing mediante software propietario</li>
+      <li>Participación en proyectos de implantación del ENS CCN-CERT</li>
+    </ul>
 
-    **Técnico de instalación y mantenimiento de telecomunicaciones**  
-    _Junio 2022 - Septiembre 2022_
-    - Instalación y mantenimiento de equipos de telecomunicaciones
-    - Gestión de redes estructuradas
-    - Maquetación de equipos
-    - Gestión usuarios M365
-    - Virtualización de equipos con VMWare
-    - Gestión de ticketing mediante software propietario
+    <h4>Técnico de instalación y mantenimiento de telecomunicaciones</h4>
+    <p><em>Junio 2022 - Septiembre 2022</em></p>
+    <ul>
+      <li>Instalación y mantenimiento de equipos de telecomunicaciones</li>
+      <li>Gestión de redes estructuradas</li>
+      <li>Maquetación de equipos</li>
+      <li>Gestión usuarios M365</li>
+      <li>Virtualización de equipos con VMWare</li>
+      <li>Gestión de ticketing mediante software propietario</li>
+    </ul>
 
-    ### Certificaciones
-    - [Microsoft Certified: Azure Fundamentals](enlace)
-    - [Microsoft 365 Certified: Fundamentals](enlace)
-    - [ITIL 4 ® Foundation](enlace)
+    <h3>Certificaciones</h3>
+    <ul>
+      <li><a href="enlace">Microsoft Certified: Azure Fundamentals</a></li>
+      <li><a href="enlace">Microsoft 365 Certified: Fundamentals</a></li>
+      <li><a href="enlace">ITIL 4 ® Foundation</a></li>
+    </ul>
   </div>
 </div>
+
 
 
