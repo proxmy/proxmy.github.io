@@ -1,4 +1,8 @@
-
+title: "Mi Blog Personal"
+description: "Proyectos y publicaciones de Ramiro Estrella Pernetti"
+baseurl: "" # Cambia esto si estás usando un subdirectorio
+url: "https://tudominio.com" # Cambia por tu dominio real
 markdown: kramdown
+theme: minima # O el tema que prefieras
 plugins:
   - jekyll-feed
