@@ -113,3 +113,20 @@
     </ul>
   </div>
 </div>
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header, main, footer {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+}
+
