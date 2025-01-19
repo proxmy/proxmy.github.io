@@ -1,6 +1,5 @@
 # Ramiro Estrella Pernetti
 **IT Systems Technician**
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -44,10 +43,10 @@
   <i class="fas fa-moon"></i>
 </button>
 
-<div style="display: flex; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; align-items: center; max-width: 1200px; margin: auto;">
   <!-- Barra lateral izquierda -->
-  <div style="flex: 1; margin-right: 20px; max-width: 300px; text-align: center;">
-    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 100%; border-radius: 50%; margin-bottom: 20px;">
+  <div style="flex: 1; margin-bottom: 20px; text-align: center;">
+    <img src="assets/me.jpeg" alt="Foto de Perfil" style="width: 150px; border-radius: 50%; margin-bottom: 20px;">
 
     <h3>Contacto</h3>
     <div class="social-links" style="margin-bottom: 20px;">
@@ -56,8 +55,13 @@
     </div>
   </div>
 
+  <!-- Blog con acceso directo -->
+  <div style="width: 100%; text-align: center; margin-bottom: 40px;">
+    <h2><a href="#blog">Blog</a></h2>
+  </div>
+
   <!-- Contenido principal -->
-  <div style="flex: 2;">
+  <div style="flex: 2; width: 100%;">
     <h3>Educación</h3>
     <ul>
       <li>Grado en Ingeniería Telemática, Universidad Abierta de Cataluña (2024 - Actual)</li>
@@ -94,9 +98,10 @@
       <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId">Microsoft 365 Certified: Fundamentals</a></li>
       <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId">Microsoft Certified: Azure Fundamentals</a></li>
       <li><a href="https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile">ITIL 4 ® Foundation</a></li>
+      <li><a href="https://www.credly.com/badges/27bf2bd1-137e-4977-87f6-3f74c846bdc9/linked_in_profile">AWS Certified Cloud Practitioner</a></li>
     </ul>
 
-    <h3>Blog</h3>
+    <h3 id="blog">Blog</h3>
     <ul>
       {% for post in site.posts %}
         <li>
