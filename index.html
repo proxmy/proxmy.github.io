@@ -112,7 +112,18 @@ title: Portafolio
       color: var(--text-color);
       line-height: 1.3;
   }      .cert-list i { color: var(--accent-color); margin-right: 10px; width: 15px; text-align: center;}
-    
+    /* Estilo para los enlaces de certificaciones */
+  .cert-list a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-block; /* Ayuda con el click */
+  }
+  .cert-list a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+      cursor: pointer;
+  }
       /* --- CONTENIDO PRINCIPAL (DERECHA) --- */
       .content-area section {
         background: var(--card-bg);
