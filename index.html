@@ -1,42 +1,200 @@
 ---
 layout: default
-title: Inicio
+title: Portafolio
 ---
 
-<div class="home">
-  <h1>Bienvenido a mi Portafolio</h1>
-  <p>{{ site.description }}</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <h2>Últimos Proyectos (Automático)</h2>
-  <div id="proyectos-container">
-    <p>Cargando proyectos desde GitHub...</p>
+<style>
+  /* Variables de colores para el tema Claro/Oscuro */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #2a7ae2;
+    --card-bg: #ffffff;
+    --card-border: #e1e4e8;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: #181818;
+    --text-color: #e0e0e0;
+    --link-color: #58a6ff;
+    --card-bg: #21262d;
+    --card-border: #30363d;
+  }
+
+  /* Aplicar estilos globales */
+  body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  a { color: var(--link-color); text-decoration: none; }
+  
+  /* Estilos específicos de tu CV */
+  .cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--card-border);
+  }
+
+  .social-links a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: var(--text-color);
+  }
+  
+  .social-links a:hover { color: var(--link-color); }
+
+  /* Estilos para las tarjetas de proyectos automáticos */
+  .project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+</style>
+
+<script>
+  // Lógica del Modo Oscuro
+  function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.setAttribute('data-theme', themeName);
+    updateButtonIcon();
+  }
+
+  function toggleTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  }
+
+  function updateButtonIcon() {
+    const theme = localStorage.getItem('theme');
+    const button = document.getElementById('themeToggleButton');
+    if (button) {
+        if (theme === 'dark') {
+          button.innerHTML = '<i class="fas fa-sun"></i> Modo Claro';
+        } else {
+          button.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+        }
+    }
+  }
+
+  // Aplicar tema al cargar
+  (function() {
+      if (localStorage.getItem('theme') === 'dark') {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+  })();
+  
+  document.addEventListener('DOMContentLoaded', updateButtonIcon);
+</script>
+
+<div style="text-align: right; margin-bottom: 20px;">
+    <button id="themeToggleButton" onclick="toggleTheme()" style="padding: 8px 16px; cursor: pointer; border-radius: 5px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--text-color);">
+      <i class="fas fa-moon"></i>
+    </button>
+</div>
+
+<div class="cv-container">
+  
+  <div class="profile-section">
+    <img src="/assets/me.jpeg" alt="Ramiro Estrella" class="profile-img"> 
+    <h1>Ramiro Estrella Pernetti</h1>
+    <p><strong>IT Systems Technician</strong></p>
+    
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/ramiropernetti/" target="_blank" class="fab fa-linkedin"></a>
+      <a href="mailto:tomasestrellaramiro@gmail.com" class="fas fa-envelope"></a>
+    </div>
   </div>
+
+  <hr style="border-color: var(--card-border);">
+
+  <h3><i class="fas fa-graduation-cap"></i> Educación</h3>
+  <ul>
+    <li><strong>Grado en Ingeniería Telemática</strong>, Universidad Abierta de Cataluña (2024 - Actual)</li>
+    <li>Grado en Ingeniería Telemática, Universidad Politécnica Alcalá de Henares (2023 - No finalizado)</li>
+    <li>Técnico superior en telecomunicaciones y sistemas informáticos, CIFP Ferrolterra (2019 - 2021)</li>
+  </ul>
+
+  <h3><i class="fas fa-briefcase"></i> Experiencia Laboral</h3>
+  
+  <h4>Técnico en operaciones de sistemas informáticos en la DGSYFYP</h4>
+  <p><em>Septiembre 2023 - Actual</em></p>
+  <ul>
+    <li>Monitorización de infraestructura.</li>
+    <li>Documentación detallada de procedimientos y configuraciones.</li>
+    <li>Maquetación de equipos y gestión de usuarios M365.</li>
+    <li>Participación en proyecto de migración de M365 junto con servidor Exchange.</li>
+    <li>Gestión de ticketing y participación en proyectos ENS CCN-CERT.</li>
+  </ul>
+
+  <h4>Técnico de instalación y mantenimiento de telecomunicaciones</h4>
+  <p><em>Junio 2022 - Septiembre 2022</em></p>
+  <ul>
+    <li>Instalación y mantenimiento de equipos de telecomunicaciones.</li>
+    <li>Gestión de redes estructuradas y virtualización con VMWare.</li>
+  </ul>
+
+  <h3><i class="fas fa-certificate"></i> Certificaciones</h3>
+  <ul>
+    <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/CB26E0CCBAA26064?sharingId">Microsoft 365 Certified: Fundamentals</a></li>
+    <li><a href="https://learn.microsoft.com/api/credentials/share/es-es/RamiroTomasEstrellaPernetti-6834/66DFD3245BC67BE9?sharingId">Microsoft Certified: Azure Fundamentals</a></li>
+    <li><a href="https://www.credly.com/badges/d071d42f-62a6-4be2-acc5-af5090ec9914/linked_in_profile">ITIL 4 ® Foundation</a></li>
+    <li><a href="https://www.credly.com/badges/27bf2bd1-137e-4977-87f6-3f74c846bdc9/linked_in_profile">AWS Certified Cloud Practitioner</a></li>
+  </ul>
+
+  <hr style="border-color: var(--card-border); margin: 40px 0;">
+
+  <h2 id="proyectos">Últimos Proyectos (GitHub)</h2>
+  <div id="proyectos-container">
+    <p>Cargando proyectos...</p>
+  </div>
+
 </div>
 
 <script>
-  // CONFIGURACIÓN: Tu usuario de GitHub
   const username = 'proxmy';
 
   fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('proyectos-container');
-      container.innerHTML = ''; // Limpiar mensaje de carga
+      container.innerHTML = ''; 
 
       data.forEach(repo => {
-        // Filtro: No mostramos el propio repositorio de la web (proxmy.github.io)
         if (repo.name !== 'proxmy.github.io') { 
-            
-            // Creamos la tarjeta del proyecto
             const projectCard = `
-              <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #e1e4e8; border-radius: 6px;">
+              <div class="project-card">
                 <h3 style="margin-top: 0;">
                   <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                 </h3>
                 <p>${repo.description ? repo.description : 'Sin descripción disponible.'}</p>
                 <small>
-                  🟡 Lenguaje: ${repo.language || 'Varios'} | 
-                  ⭐ Estrellas: ${repo.stargazers_count}
+                   ${repo.language ? '🟡 ' + repo.language : ''} 
+                   ⭐ ${repo.stargazers_count}
                 </small>
               </div>
             `;
@@ -46,6 +204,6 @@ title: Inicio
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('proyectos-container').innerHTML = '<p>Hubo un error cargando los proyectos.</p>';
+      document.getElementById('proyectos-container').innerHTML = '<p>Error cargando repositorios.</p>';
     });
 </script>
