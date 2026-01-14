@@ -1,40 +1,51 @@
 ---
 layout: default
-title: Mi Portafolio
+title: Inicio
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-<body>
-  <header>
-    <h1>{{ site.title }}</h1>
-    <p>{{ site.description }}</p>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/about">Sobre mí</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>Últimos Proyectos</h2>
-    <ul>
-      {% for post in site.posts %}
-        <li>
-          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt }}</p>
-          <small>Publicado el {{ post.date | date: "%d de %B de %Y" }}</small>
-        </li>
-      {% endfor %}
-    </ul>
-  </main>
+<div class="home">
+  <h1>Bienvenido a mi Portafolio</h1>
+  <p>{{ site.description }}</p>
 
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} Ramiro Estrella Pernetti</p>
-  </footer>
-</body>
-</html>
+  <h2>Últimos Proyectos (Automático)</h2>
+  <div id="proyectos-container">
+    <p>Cargando proyectos desde GitHub...</p>
+  </div>
+</div>
+
+<script>
+  // CONFIGURACIÓN: Tu usuario de GitHub
+  const username = 'proxmy';
+
+  fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('proyectos-container');
+      container.innerHTML = ''; // Limpiar mensaje de carga
+
+      data.forEach(repo => {
+        // Filtro: No mostramos el propio repositorio de la web (proxmy.github.io)
+        if (repo.name !== 'proxmy.github.io') { 
+            
+            // Creamos la tarjeta del proyecto
+            const projectCard = `
+              <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #e1e4e8; border-radius: 6px;">
+                <h3 style="margin-top: 0;">
+                  <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                </h3>
+                <p>${repo.description ? repo.description : 'Sin descripción disponible.'}</p>
+                <small>
+                  🟡 Lenguaje: ${repo.language || 'Varios'} | 
+                  ⭐ Estrellas: ${repo.stargazers_count}
+                </small>
+              </div>
+            `;
+            container.innerHTML += projectCard;
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('proyectos-container').innerHTML = '<p>Hubo un error cargando los proyectos.</p>';
+    });
+</script>
