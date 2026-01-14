@@ -43,13 +43,13 @@ title: Portafolio
   a:hover { text-decoration: underline; }
 
   /* --- LAYOUT PRINCIPAL (GRID) --- */
-  .main-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+.main-container {
+    max-width: 1600px; /* Antes 1200px -> Ahora permite ser mucho más ancho */
+    margin: 40px 30px; /* 40px arriba, 30px a la izquierda. NO centrado. */
+    padding: 0 10px;
     display: grid;
-    grid-template-columns: 300px 1fr; /* Columna Izq (300px) - Columna Der (Resto) */
-    gap: 30px;
+    grid-template-columns: 320px 1fr; /* Hice la barra lateral un pelín más ancha (320px) */
+    gap: 40px; /* Más separación entre la barra y el contenido */
     align-items: start;
   }
 
