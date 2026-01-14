@@ -44,12 +44,19 @@ title: Portafolio
 
   /* --- LAYOUT PRINCIPAL (GRID) --- */
 .main-container {
-    max-width: 1600px; /* Antes 1200px -> Ahora permite ser mucho más ancho */
-    margin: 40px 30px; /* 40px arriba, 30px a la izquierda. NO centrado. */
-    padding: 0 10px;
+    /* ANCHO: Le permitimos ocupar hasta 1800px (casi toda una pantalla Full HD) */
+    max-width: 1800px; 
+    
+    /* POSICIÓN: Esto es la clave para que NO se centre */
+    margin-left: 40px !important;  /* ¡Fuerza 40px desde la izquierda! */
+    margin-right: 40px;            /* 40px de margen derecho por si la pantalla es pequeña */
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    /* GRID (DISTRIBUCIÓN) */
     display: grid;
-    grid-template-columns: 320px 1fr; /* Hice la barra lateral un pelín más ancha (320px) */
-    gap: 40px; /* Más separación entre la barra y el contenido */
+    grid-template-columns: 320px 1fr; /* Columna Izq (Fija) - Columna Der (Flexible) */
+    gap: 40px;
     align-items: start;
   }
 
