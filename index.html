@@ -192,10 +192,10 @@ title: Portafolio
                   <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                 </h3>
                 <p>${repo.description ? repo.description : 'Sin descripción disponible.'}</p>
-                <small>
-                   ${repo.language ? '🟡 ' + repo.language : ''} 
-                   ⭐ ${repo.stargazers_count}
-                </small>
+<small style="display: block; margin-top: 10px; color: var(--text-color); opacity: 0.8;">
+    ${repo.language ? `<span style="background: #2a7ae2; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 10px;">${repo.language}</span>` : ''} 
+    <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
+</small>
               </div>
             `;
             container.innerHTML += projectCard;
