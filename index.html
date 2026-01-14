@@ -6,68 +6,107 @@ title: Portafolio
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-  /* Variables de colores para el tema Claro/Oscuro */
+  /* --- ESTILOS BASE Y DARK MODE --- */
   :root {
     --bg-color: #ffffff;
     --text-color: #333333;
-    --link-color: #2a7ae2;
+    --link-color: #0969da;
     --card-bg: #ffffff;
-    --card-border: #e1e4e8;
+    --card-border: #d0d7de;
+    --tag-bg: #ddf4ff;
+    --tag-text: #0969da;
   }
 
   [data-theme="dark"] {
-    --bg-color: #181818;
-    --text-color: #e0e0e0;
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
     --link-color: #58a6ff;
-    --card-bg: #21262d;
+    --card-bg: #161b22;
     --card-border: #30363d;
+    --tag-bg: #1f6feb26;
+    --tag-text: #58a6ff;
   }
 
-  /* Aplicar estilos globales */
   body {
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
     transition: background-color 0.3s, color 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   }
 
   a { color: var(--link-color); text-decoration: none; }
-  
-  /* Estilos específicos de tu CV */
+  a:hover { text-decoration: underline; }
+
+  /* --- ESTRUCTURA --- */
   .cv-container {
-    max-width: 1200px;
+    max-width: 900px; /* Un poco más estrecho para mejor lectura */
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
   }
-  
-  .profile-section {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
+
+  .profile-section { text-align: center; margin-bottom: 50px; }
   .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 160px; height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid var(--card-border);
+    border: 4px solid var(--card-border);
+    margin-bottom: 15px;
   }
 
-  .social-links a {
-    font-size: 24px;
-    margin: 0 10px;
-    color: var(--text-color);
-  }
-  
-  .social-links a:hover { color: var(--link-color); }
-
-  /* Estilos para las tarjetas de proyectos automáticos */
+  /* --- TARJETAS DE PROYECTOS --- */
   .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Estilo especial para el Proyecto Destacado */
+  .featured-project {
+    border: 2px solid #e3b341 !important; /* Dorado */
+    position: relative;
+    background: linear-gradient(to bottom right, var(--card-bg), rgba(227, 179, 65, 0.05));
+  }
+  
+  .featured-badge {
+    background-color: #e3b341;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  /* Etiquetas (Topics) */
+  .topic-tag {
+    display: inline-block;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-weight: 500;
+  }
+
+  .stats-row {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--text-color);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 </style>
 
@@ -178,32 +217,75 @@ title: Portafolio
 <script>
   const username = 'proxmy';
 
-  fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
-    .then(response => response.json())
-    .then(data => {
+  // Función para obtener repositorios
+  async function fetchProjects() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`);
+      const data = await response.json();
       const container = document.getElementById('proyectos-container');
       container.innerHTML = ''; 
 
-      data.forEach(repo => {
-        if (repo.name !== 'proxmy.github.io') { 
+      // Ordenamos para que 'mini-soc-lab' salga PRIMERO siempre, luego los demás por fecha
+      const sortedData = data.sort((a, b) => {
+          if (a.name === 'mini-soc-lab') return -1;
+          if (b.name === 'mini-soc-lab') return 1;
+          return new Date(b.updated_at) - new Date(a.updated_at);
+      });
+
+      sortedData.forEach(repo => {
+        // Filtramos el repo de la propia web y forks si no quieres mostrarlos
+        if (repo.name !== 'proxmy.github.io' && !repo.fork) { 
+            
+            // Lógica para destacar el proyecto estrella
+            const isFeatured = repo.name === 'mini-soc-lab';
+            const featuredClass = isFeatured ? 'featured-project' : '';
+            const featuredBadge = isFeatured ? '<span class="featured-badge">🔥 Proyecto Destacado</span><br>' : '';
+            
+            // Generar etiquetas (topics)
+            const topicsHtml = repo.topics.map(topic => 
+                `<span class="topic-tag">${topic}</span>`
+            ).join('');
+
             const projectCard = `
-              <div class="project-card">
-                <h3 style="margin-top: 0;">
+              <div class="project-card ${featuredClass}">
+                ${featuredBadge}
+                <h3 style="margin: 0 0 10px 0;">
                   <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                 </h3>
-                <p>${repo.description ? repo.description : 'Sin descripción disponible.'}</p>
-<small style="display: block; margin-top: 10px; color: var(--text-color); opacity: 0.8;">
-    ${repo.language ? `<span style="background: #2a7ae2; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 10px;">${repo.language}</span>` : ''} 
-    <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
-</small>
+                <p style="margin: 0 0 15px 0; line-height: 1.5;">
+                    ${repo.description ? repo.description : 'Sin descripción disponible.'}
+                </p>
+                
+                <div>${topicsHtml}</div>
+
+                <div class="stats-row">
+                   <span><i class="fas fa-circle" style="font-size: 10px; color: ${getLanguageColor(repo.language)}"></i> ${repo.language || 'Code'}</span>
+                   <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
+                   <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                </div>
               </div>
             `;
             container.innerHTML += projectCard;
         }
       });
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Error:', error);
       document.getElementById('proyectos-container').innerHTML = '<p>Error cargando repositorios.</p>';
-    });
+    }
+  }
+
+  // Pequeña utilidad para colores de lenguaje
+  function getLanguageColor(lang) {
+      const colors = {
+          'Python': '#3572A5',
+          'Shell': '#89e051',
+          'HTML': '#e34c26',
+          'JavaScript': '#f1e05a',
+          'Dockerfile': '#384d54'
+      };
+      return colors[lang] || '#ccc';
+  }
+
+  // Ejecutar al cargar
+  fetchProjects();
 </script>
