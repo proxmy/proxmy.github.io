@@ -1,168 +1,173 @@
 ---
-layout: default
+layout: null
 title: Portafolio
 ---
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<style>
-  /* --- VARIABLES & DARK MODE --- */
-  :root {
-    --bg-color: #f8f9fa; /* Fondo ligeramente gris para contraste */
-    --text-color: #2d3436;
-    --sidebar-bg: #ffffff;
-    --card-bg: #ffffff;
-    --border-color: #e1e4e8;
-    --link-color: #0969da;
-    --accent-color: #2a7ae2;
-    --tag-bg: #ddf4ff;
-    --tag-text: #0969da;
-  }
-
-  [data-theme="dark"] {
-    --bg-color: #0d1117;
-    --text-color: #c9d1d9;
-    --sidebar-bg: #161b22;
-    --card-bg: #161b22;
-    --border-color: #30363d;
-    --link-color: #58a6ff;
-    --accent-color: #58a6ff;
-    --tag-bg: #1f6feb26;
-    --tag-text: #58a6ff;
-  }
-
-  body {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  a { color: var(--link-color); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* --- LAYOUT PRINCIPAL (GRID) --- */
-.main-container {
-    /* ANCHO: Le permitimos ocupar hasta 1800px (casi toda una pantalla Full HD) */
-    max-width: 1800px; 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramiro Estrella | SysAdmin & Cloud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    /* POSICIÓN: Esto es la clave para que NO se centre */
-    margin-left: 40px !important;  /* ¡Fuerza 40px desde la izquierda! */
-    margin-right: 40px;            /* 40px de margen derecho por si la pantalla es pequeña */
-    margin-top: 40px;
-    margin-bottom: 40px;
+    <style>
+      /* --- VARIABLES & DARK MODE --- */
+      :root {
+        --bg-color: #f8f9fa;
+        --text-color: #2d3436;
+        --sidebar-bg: #ffffff;
+        --card-bg: #ffffff;
+        --border-color: #e1e4e8;
+        --link-color: #0969da;
+        --accent-color: #2a7ae2;
+        --tag-bg: #ddf4ff;
+        --tag-text: #0969da;
+      }
+    
+      [data-theme="dark"] {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --sidebar-bg: #161b22;
+        --card-bg: #161b22;
+        --border-color: #30363d;
+        --link-color: #58a6ff;
+        --accent-color: #58a6ff;
+        --tag-bg: #1f6feb26;
+        --tag-text: #58a6ff;
+      }
+    
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
+    
+      a { color: var(--link-color); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    
+      /* --- LAYOUT GLOBAL --- */
+      .main-container {
+        display: grid;
+        grid-template-columns: 320px 1fr; /* Barra fija 320px - Contenido resto */
+        gap: 50px;
+        padding: 40px; /* Margen general alrededor */
+        max-width: 1800px; /* Permitimos que se estire mucho más */
+        margin: 0; /* Eliminamos el centrado automático */
+        align-items: start;
+      }
+    
+      /* --- BARRA LATERAL (IZQUIERDA) --- */
+      .sidebar {
+        background: var(--sidebar-bg);
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        position: sticky;
+        top: 40px; /* Se queda pegada al bajar */
+        height: fit-content;
+      }
+    
+      .profile-img {
+        width: 160px; height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--border-color);
+        margin-bottom: 20px;
+      }
+    
+      .sidebar h1 { font-size: 1.6rem; margin: 10px 0 5px 0; }
+      .sidebar h2 { font-size: 1rem; color: var(--accent-color); margin-bottom: 20px; font-weight: 500;}
+      
+      .social-links { margin: 25px 0; display: flex; justify-content: center; gap: 20px; }
+      .social-links a { font-size: 1.5rem; color: var(--text-color); transition: color 0.2s; }
+      .social-links a:hover { color: var(--accent-color); transform: scale(1.1); }
+    
+      .download-btn {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        background-color: var(--accent-color);
+        color: white !important;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none !important;
+        margin-top: 20px;
+        transition: opacity 0.2s;
+      }
+      .download-btn:hover { opacity: 0.9; text-decoration: none; }
+    
+      /* Lista de certificaciones en sidebar */
+      .cert-list { list-style: none; padding: 0; text-align: left; margin-top: 30px; }
+      .cert-list li { margin-bottom: 12px; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; color: var(--text-color);}
+      .cert-list i { color: var(--accent-color); margin-right: 10px; width: 15px; text-align: center;}
+    
+      /* --- CONTENIDO PRINCIPAL (DERECHA) --- */
+      .content-area section {
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      }
+    
+      .section-title {
+        font-size: 1.5rem;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 15px;
+        margin-top: 0;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+    
+      /* Experiencia */
+      .exp-item { margin-bottom: 35px; }
+      .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+      .exp-role { font-weight: 700; font-size: 1.2rem; color: var(--link-color); }
+      .exp-date { font-size: 0.95rem; opacity: 0.7; font-weight: 500; }
+      .exp-company { display: block; font-size: 1rem; margin-bottom: 10px; font-weight: 600; opacity: 0.9; }
+      .exp-desc { margin: 0; line-height: 1.6; padding-left: 20px; }
+      .exp-desc li { margin-bottom: 6px; }
+    
+      /* Proyectos */
+      .project-card {
+        padding: 25px;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background: var(--bg-color);
+        transition: transform 0.2s, border-color 0.2s;
+      }
+      .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
+      
+      .featured-project {
+        border: 2px solid #e3b341 !important;
+        background: linear-gradient(to right, var(--card-bg), rgba(227, 179, 65, 0.08));
+      }
+      
+      .topic-tag {
+        display: inline-block; background: var(--tag-bg); color: var(--tag-text);
+        padding: 4px 12px; font-size: 0.8rem; border-radius: 20px; margin: 8px 6px 0 0; font-weight: 600;
+      }
+    
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .main-container { grid-template-columns: 1fr; padding: 20px; gap: 30px; }
+        .sidebar { position: static; margin-bottom: 20px; }
+      }
+    </style>
+</head>
+<body>
 
-    /* GRID (DISTRIBUCIÓN) */
-    display: grid;
-    grid-template-columns: 320px 1fr; /* Columna Izq (Fija) - Columna Der (Flexible) */
-    gap: 40px;
-    align-items: start;
-  }
-
-  /* --- SIDEBAR (IZQUIERDA) --- */
-  .sidebar {
-    background: var(--sidebar-bg);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    position: sticky; /* Se queda fijo al hacer scroll */
-    top: 20px; 
-  }
-
-  .profile-img {
-    width: 150px; height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--border-color);
-    margin-bottom: 15px;
-  }
-
-  .sidebar h1 { font-size: 1.5rem; margin: 10px 0 5px 0; }
-  .sidebar h2 { font-size: 1rem; color: var(--accent-color); margin-bottom: 20px; font-weight: 500;}
-  
-  .social-links { margin: 20px 0; display: flex; justify-content: center; gap: 15px; }
-  .social-links a { font-size: 1.4rem; color: var(--text-color); transition: color 0.2s; }
-  .social-links a:hover { color: var(--accent-color); }
-
-  .download-btn {
-    display: inline-block;
-    width: 100%;
-    padding: 10px 0;
-    background-color: var(--accent-color);
-    color: white !important;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none !important;
-    margin-top: 15px;
-    transition: opacity 0.2s;
-  }
-  .download-btn:hover { opacity: 0.9; }
-
-  /* Lista de certificaciones pequeña en sidebar */
-  .cert-list { list-style: none; padding: 0; text-align: left; margin-top: 30px; }
-  .cert-list li { margin-bottom: 10px; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;}
-  .cert-list i { color: var(--accent-color); margin-right: 8px; width: 15px;}
-
-  /* --- CONTENIDO PRINCIPAL (DERECHA) --- */
-  .content-area section {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 30px;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* Experiencia más compacta */
-  .exp-item { margin-bottom: 25px; }
-  .exp-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 5px; }
-  .exp-role { font-weight: bold; font-size: 1.1rem; }
-  .exp-date { font-size: 0.9rem; opacity: 0.7; }
-  .exp-desc { margin: 5px 0 0 0; line-height: 1.5; padding-left: 20px; }
-
-  /* --- TARJETAS PROYECTOS --- */
-  .project-card {
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: var(--bg-color); /* Ligeramente distinto al fondo blanco */
-    transition: transform 0.2s;
-  }
-  .project-card:hover { transform: translateX(5px); border-color: var(--accent-color); }
-  
-  .featured-project {
-    border: 2px solid #e3b341 !important;
-    background: linear-gradient(to right, var(--card-bg), rgba(227, 179, 65, 0.05));
-  }
-  
-  .topic-tag {
-    display: inline-block; background: var(--tag-bg); color: var(--tag-text);
-    padding: 2px 10px; font-size: 0.75rem; border-radius: 20px; margin: 5px 5px 0 0; font-weight: 600;
-  }
-
-  /* --- RESPONSIVE (Móvil) --- */
-  @media (max-width: 768px) {
-    .main-container { grid-template-columns: 1fr; margin: 20px auto; }
-    .sidebar { position: static; text-align: center; }
-    .exp-header { flex-direction: column; }
-  }
-</style>
-
-<div style="position: absolute; top: 20px; right: 20px; z-index: 100;">
-    <button id="themeToggleButton" onclick="toggleTheme()" style="padding: 8px 12px; cursor: pointer; border-radius: 20px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color);">
+<div style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
+    <button id="themeToggleButton" onclick="toggleTheme()" style="width: 40px; height: 40px; cursor: pointer; border-radius: 50%; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
       <i class="fas fa-moon"></i>
     </button>
 </div>
@@ -174,22 +179,22 @@ title: Portafolio
     <h1>Ramiro Estrella</h1>
     <h2>SysAdmin | Cloud & Sec</h2>
     
-    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.4;">
-      Transformo problemas complejos en infraestructura segura y documentada.
+    <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.5; margin-bottom: 20px;">
+      Transformo problemas complejos en infraestructura segura, automatizada y bien documentada.
     </p>
 
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/ramiropernetti/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:tomasestrellaramiro@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/proxmy" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ramiropernetti/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:tomasestrellaramiro@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/proxmy" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
     </div>
 
     <a href="/assets/cv-ramiro.pdf" class="download-btn" download>
       <i class="fas fa-file-pdf"></i> Descargar CV
     </a>
 
-    <div style="text-align: left; margin-top: 30px;">
-        <h3 style="font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">Certificaciones</h3>
+    <div style="text-align: left; margin-top: 35px;">
+        <h3 style="font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 15px;">Certificaciones</h3>
         <ul class="cert-list">
             <li><i class="fab fa-microsoft"></i> Microsoft 365 Certified</li>
             <li><i class="fab fa-microsoft"></i> Azure Fundamentals</li>
@@ -207,13 +212,14 @@ title: Portafolio
       <div class="exp-item">
         <div class="exp-header">
             <span class="exp-role">Técnico en Operaciones de Sistemas</span>
-            <span class="exp-date">DGSYFYP | Sept 2023 - Actual</span>
+            <span class="exp-date">Sept 2023 - Actual</span>
         </div>
+        <span class="exp-company">DGSYFYP</span>
         <ul class="exp-desc">
-            <li><strong>Gestión proactiva:</strong> Monitorización de infraestructura crítica y reducción de tiempos de respuesta.</li>
-            <li><strong>Documentación:</strong> Creación de base de conocimiento (Wiki) para estandarizar procesos.</li>
-            <li><strong>Cloud & Híbrido:</strong> Gestión de M365 y migración de Exchange.</li>
-            <li><strong>Seguridad:</strong> Implementación de normativas ENS (CCN-CERT).</li>
+            <li><strong>Gestión proactiva:</strong> Monitorización de infraestructura crítica reduciendo tiempos de respuesta y asegurando alta disponibilidad.</li>
+            <li><strong>Documentación Técnica:</strong> Creación de Wiki interna para estandarizar procesos y acelerar el onboarding.</li>
+            <li><strong>Entornos Híbridos:</strong> Administración de tenants Microsoft 365 y migración de buzones Exchange.</li>
+            <li><strong>Seguridad y Cumplimiento:</strong> Aplicación de medidas técnicas según normativa ENS (CCN-CERT).</li>
         </ul>
       </div>
 
@@ -223,8 +229,8 @@ title: Portafolio
             <span class="exp-date">Jun 2022 - Sept 2022</span>
         </div>
         <ul class="exp-desc">
-            <li>Despliegue físico y configuración de redes estructuradas.</li>
-            <li>Virtualización de servidores con VMWare.</li>
+            <li>Despliegue físico y configuración lógica de redes estructuradas para clientes corporativos.</li>
+            <li>Consolidación de servidores mediante virtualización con VMWare.</li>
         </ul>
       </div>
     </section>
@@ -232,16 +238,20 @@ title: Portafolio
     <section>
       <h3 class="section-title"><i class="fas fa-code"></i> Proyectos Destacados</h3>
       <div id="proyectos-container">
-        <p>Cargando desde GitHub...</p>
+        <p style="opacity: 0.6; font-style: italic;">Conectando con GitHub API...</p>
       </div>
     </section>
 
     <section>
         <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Educación</h3>
-        <ul style="padding-left: 20px; line-height: 1.6;">
-            <li><strong>Grado en Ingeniería Telemática</strong> - UOC (2024 - Actual)</li>
-            <li><strong>Técnico Superior (ASIR/Telecom)</strong> - CIFP Ferrolterra (2019 - 2021)</li>
-        </ul>
+        <div style="margin-bottom: 15px;">
+            <strong>Grado en Ingeniería Telemática</strong><br>
+            <span style="opacity: 0.8; font-size: 0.9rem;">UOC (2024 - Actual)</span>
+        </div>
+        <div>
+            <strong>Técnico Superior (ASIR)</strong><br>
+            <span style="opacity: 0.8; font-size: 0.9rem;">CIFP Ferrolterra (2019 - 2021)</span>
+        </div>
     </section>
 
   </main>
@@ -284,7 +294,7 @@ title: Portafolio
         if (repo.name !== 'proxmy.github.io' && !repo.fork) { 
             const isFeatured = repo.name === 'mini-soc-lab';
             const featuredClass = isFeatured ? 'featured-project' : '';
-            const featuredBadge = isFeatured ? '<span style="background:#e3b341; color:black; font-size:11px; padding:2px 6px; border-radius:4px; font-weight:bold;">🔥 Destacado</span><br>' : '';
+            const featuredBadge = isFeatured ? '<span style="background:#e3b341; color:black; font-size:11px; padding:3px 8px; border-radius:4px; font-weight:bold; display:inline-block; margin-bottom:8px;">🔥 Proyecto Destacado</span><br>' : '';
             
             const topicsHtml = repo.topics.map(topic => `<span class="topic-tag">${topic}</span>`).join('');
 
@@ -292,10 +302,10 @@ title: Portafolio
               <div class="project-card ${featuredClass}">
                 ${featuredBadge}
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                    <h4 style="margin:0;"><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
-                    <small><i class="far fa-star"></i> ${repo.stargazers_count}</small>
+                    <h4 style="margin:0; font-size: 1.1rem;"><a href="${repo.html_url}" target="_blank">${repo.name}</a></h4>
+                    <small style="opacity:0.7;"><i class="far fa-star"></i> ${repo.stargazers_count}</small>
                 </div>
-                <p style="font-size:0.95rem; margin-bottom:10px; color:var(--text-color);">${repo.description || 'Sin descripción.'}</p>
+                <p style="font-size:0.95rem; margin-bottom:12px; line-height: 1.5; color:var(--text-color); opacity: 0.9;">${repo.description || 'Sin descripción.'}</p>
                 <div>${topicsHtml}</div>
               </div>
             `;
@@ -306,3 +316,5 @@ title: Portafolio
   }
   fetchProjects();
 </script>
+</body>
+</html>
