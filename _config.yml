@@ -1,8 +1,7 @@
-title: "Mi Blog Personal"
-description: "Proyectos y publicaciones de Ramiro Estrella Pernetti"
-baseurl: "" # Cambia esto si estás usando un subdirectorio
-url: "https://tudominio.com" # Cambia por tu dominio real
-markdown: kramdown
-theme: minima # O el tema que prefieras
+title: "Ramiro Estrella Pernetti"
+description: "Tecnico de redes | Portafolio Profesional"
+baseurl: "" 
+url: "https://proxmy.github.io" # IMPORTANTE: Pon tu URL real aquí
+theme: minima
 plugins:
   - jekyll-feed
